@@ -7,14 +7,14 @@ import (
 )
 
 func init() {
-	migrator.RegisterSeeder("{{NAME}}", &{{STRUCT}}{})
+	migrator.RegisterSeeder("UserSeeder", &UserSeeder{})
 }
 
-// {{STRUCT}} is a database seeder.
-type {{STRUCT}} struct{}
+// UserSeeder is a database seeder.
+type UserSeeder struct{}
 
 // Run executes the seeder.
-func (s *{{STRUCT}}) Run(db *sql.DB) error {
+func (s *UserSeeder) Run(db *sql.DB) error {
 	_, err := db.Exec(`
 		-- TODO: write your seed SQL here
 	`)
@@ -22,7 +22,7 @@ func (s *{{STRUCT}}) Run(db *sql.DB) error {
 }
 
 // Down reverses the seeder.
-func (s *{{STRUCT}}) Down(db *sql.DB) error {
+func (s *UserSeeder) Down(db *sql.DB) error {
 	_, err := db.Exec(`
 		-- TODO: write your seed rollback SQL here
 	`)

@@ -1,10 +1,9 @@
+/*
+Copyright © 2026 NAME HERE Triyana Suryapraja S <dev@tss.web.id>
+*/
 package main
 
-import (
-	"github.com/tss182/migration/cmd"
-	_ "github.com/tss182/migration/database/migrations"
-	_ "github.com/tss182/migration/database/seeders"
-)
+import "github.com/tss182/migration/cmd"
 
 func main() {
 	cmd.Execute()

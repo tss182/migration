@@ -8,14 +8,14 @@ import (
 )
 
 func init() {
-	migrator.RegisterMigration("{{NAME}}", &{{STRUCT}}{})
+	migrator.RegisterMigration("20260407103112_from_repair_tool", &FromRepairTool{})
 }
 
-// {{STRUCT}} represents the {{NAME}} migration.
-type {{STRUCT}} struct{}
+// FromRepairTool represents the 20260407103112_from_repair_tool migration.
+type FromRepairTool struct{}
 
 // Up applies the migration.
-func (m *{{STRUCT}}) Up(db *sql.DB) error {
+func (m *FromRepairTool) Up(db *sql.DB) error {
 	return schema.CreateTable(db, migrator.Driver, "your_table", func(u *schema.TableBuilder) {
 		u.Int("id").AutoIncrement().PrimaryKey()
 		u.String("name").NotNull()
@@ -24,6 +24,6 @@ func (m *{{STRUCT}}) Up(db *sql.DB) error {
 }
 
 // Down reverses the migration.
-func (m *{{STRUCT}}) Down(db *sql.DB) error {
+func (m *FromRepairTool) Down(db *sql.DB) error {
 	return schema.DropTable(db, "your_table")
 }

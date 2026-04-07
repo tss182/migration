@@ -1,23 +1,26 @@
+/*
+Copyright © 2026 NAME HERE <EMAIL ADDRESS>
+*/
 package cmd
 
 import (
-	"fmt"
 	"os"
 
 	"github.com/joho/godotenv"
 	"github.com/spf13/cobra"
 )
 
+// rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:          "migration",
-	Short:        "Laravel-like migration and seeder CLI tool for Go",
-	SilenceUsage: true,
+	Use:          "app",
+	Short:        "migration and seeder CLI tool for Go",
 }
 
-// Execute runs the root command.
+// Execute adds all child commands to the root command and sets flags appropriately.
+// This is called by main.main(). It only needs to happen once to the rootCmd.
 func Execute() {
-	if err := rootCmd.Execute(); err != nil {
-		fmt.Fprintln(os.Stderr, err)
+	err := rootCmd.Execute()
+	if err != nil {
 		os.Exit(1)
 	}
 }
