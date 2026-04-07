@@ -1,0 +1,22 @@
+package seeders
+
+import (
+	"database/sql"
+
+	"github.com/tss182/migration/internal/migrator"
+)
+
+func init() {
+	migrator.RegisterSeeder("{{NAME}}", &{{STRUCT}}{})
+}
+
+// {{STRUCT}} is a database seeder.
+type {{STRUCT}} struct{}
+
+// Run executes the seeder.
+func (s *{{STRUCT}}) Run(db *sql.DB) error {
+	_, err := db.Exec(`
+		-- TODO: write your seed SQL here
+	`)
+	return err
+}

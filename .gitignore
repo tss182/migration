@@ -1,0 +1,10 @@
+# Binary output
+migration
+migration-cli
+*.exe
+
+# Env file — never commit real credentials
+.env
+
+# Go build cache
+vendor/
